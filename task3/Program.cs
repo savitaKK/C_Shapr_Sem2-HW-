@@ -3,34 +3,46 @@
 // 7 -> да
 // 1 -> нет
 
-int Prompt(string msg)
+int Usernum(string msg)
 {
     System.Console.Write($"{msg} >");
     return Convert.ToInt32(Console.ReadLine());
 }
 
-bool Validate(int num)
+bool Weekd(int numday)
 {
-    if (num <6 )
+    if (numday >5)
     {
         return true;
     }
-    System.Console.WriteLine("Будни, дорогой, пошли работать:)>");
+
     return false;
 }
 
-   System.Console.WriteLine($" {num} УРА!Выходной!Спим до 10");
+bool Validate(int day)
+  {
 
+    if (day >0 && day <=7)
+{
+     return true;
+}
+    System.Console.WriteLine("Ват?Попробуй еще раз");
+    return false;
+  } 
 
-   //    if (num <>6 || num <>7)
+int weekday=Usernum("Введите номер дня недели ");
+if (Validate(weekday))
+ {
+    if (Weekd(weekday))
     {
-        return true;
+        System.Console.WriteLine($" {weekday} это выходной!Спим до 10 :))))))");
     }
-    System.Console.WriteLine("Будни, дорогой, пошли работать:)>");
-    return false;
-}
+    else
+    {
+        System.Console.WriteLine($" {weekday} это будни :( Придется поработать.");
+    }
+ }
 
-   System.Console.WriteLine($" {num} УРА!Выходной!Спим до 10");
-
+  
 
 
